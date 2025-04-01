@@ -6,7 +6,7 @@ import pandas as pd
 # Load models
 with open(model1.pkl, "rb") as file1:
             model1 = pickle.load(file1)
-        with open(model2.pkl, "rb") as file2:
+with open(model2.pkl, "rb") as file2:
             model2 = pickle.load(file2)
 
 					
