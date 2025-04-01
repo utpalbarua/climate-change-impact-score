@@ -1,11 +1,13 @@
 import streamlit as st
-import joblib
+import pickle
 import numpy as np
 import pandas as pd
 
 # Load models
-model1 = joblib.load("model1.pkl")
-model2 = joblib.load("model2.pkl")
+with open(model1.pkl, "rb") as file1:
+            model1 = pickle.load(file1)
+        with open(model2.pkl, "rb") as file2:
+            model2 = pickle.load(file2)
 
 					
 # Streamlit app title
