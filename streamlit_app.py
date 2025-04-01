@@ -4,8 +4,8 @@ import numpy as np
 import pandas as pd
 
 # Load models
-model1 = joblib.load('model1.pkl')
-model2 = joblib.load('model2.pkl')
+model1 = joblib.load("model1.pkl")
+model2 = joblib.load("model2.pkl")
 
 					
 # Streamlit app title
