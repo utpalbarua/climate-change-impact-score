@@ -283,7 +283,7 @@ if page == "🏠 Home":
             
             # Example output
             st.markdown("### Sample Output Preview")
-            st.image("https://via.placeholder.com/600x300.png?text=Result+Visualization", use_column_width=True)
+            st.image("https://via.placeholder.com/600x300.png?text=Result+Visualization", use_container_width=True)
         
         st.markdown('</div>', unsafe_allow_html=True)
 
@@ -394,7 +394,7 @@ elif page == "ℹ️ About":
     
     with about_col2:
         st.markdown('<div class="card">', unsafe_allow_html=True)
-        st.image("https://via.placeholder.com/400x300.png?text=Climate+Dashboard", use_column_width=True)
+        st.image("https://via.placeholder.com/400x300.png?text=Climate+Dashboard", use_container_width=True)
         
         st.markdown("### 📰 Latest Updates")
         st.markdown("""
@@ -527,7 +527,7 @@ elif page == "📈 Analytics":
     # Global Impact Map (Placeholder)
     st.markdown('<div class="card">', unsafe_allow_html=True)
     st.subheader("🗺️ Global Impact Map")
-    st.image("https://via.placeholder.com/800x400.png?text=Global+Climate+Impact+Map", use_column_width=True)
+    st.image("https://via.placeholder.com/800x400.png?text=Global+Climate+Impact+Map", use_container_width=True)
     
     st.markdown("""
     **Regional Impact Summary:**
@@ -565,7 +565,7 @@ elif page == "📈 Analytics":
             st.write(f"Analysis for {param1} and {param2} over {time_period} in {region}")
             
             # Placeholder chart
-            st.image("https://via.placeholder.com/600x300.png?text=Custom+Analysis+Chart", use_column_width=True)
+            st.image("https://via.placeholder.com/600x300.png?text=Custom+Analysis+Chart", use_container_width=True)
     
     st.markdown('</div>', unsafe_allow_html=True)
 
