@@ -352,42 +352,6 @@ elif page == "📊 Dataset":
             with st.expander("Data Summary"):
                 st.write(filtered_df.describe())
     
-    # Data visualizations
-    st.subheader("Data Visualization")
-    if df is not None:
-        viz_col1, viz_col2 = st.columns(2)
-        
-        with viz_col1:
-            if 'Year' in df.columns and len(df.columns) > 1:
-                y_column = st.selectbox("Select Y-axis", df.columns.difference(['Year']), index=0)
-                
-                chart = alt.Chart(df).mark_line().encode(
-                    x=alt.X('Year:O', title='Year'),
-                    y=alt.Y(f'{y_column}:Q', title=y_column)
-                ).properties(
-                    title=f'{y_column} Over Time'
-                ).interactive()
-                
-                st.altair_chart(chart, use_container_width=True)
-        
-        with viz_col2:
-            if len(df.columns) > 2:
-                numeric_cols = df.select_dtypes(include=['float64', 'int64']).columns.tolist()
-                if len(numeric_cols) >= 2:
-                    x_column = st.selectbox("Select X-axis", numeric_cols, index=0)
-                    y_column = st.selectbox("Select Y-axis", [col for col in numeric_cols if col != x_column], index=0)
-                    
-                    scatter = alt.Chart(df).mark_circle(size=60).encode(
-                        x=alt.X(f'{x_column}:Q', title=x_column),
-                        y=alt.Y(f'{y_column}:Q', title=y_column),
-                        tooltip=['Year', x_column, y_column]
-                    ).properties(
-                        title=f'Relationship: {x_column} vs {y_column}'
-                    ).interactive()
-                    
-                    st.altair_chart(scatter, use_container_width=True)
-    
-    st.markdown('</div>', unsafe_allow_html=True)
 
 elif page == "ℹ️ About":
     st.markdown("""
@@ -439,15 +403,7 @@ elif page == "ℹ️ About":
         - Improved data analytics capabilities (January 2025)
         """)
         st.markdown('</div>', unsafe_allow_html=True)
-        
-        # Team information
-        st.markdown('<div class="card">', unsafe_allow_html=True)
-        st.markdown("### 👥 Our Team")
-        st.markdown("""
-        - Dr. Jane Smith - Climate Scientist
-        - Prof. John Doe - Data Analyst
-        - Alex Johnson - Software Developer
-        """)
+       
         st.markdown('</div>', unsafe_allow_html=True)
 
 elif page == "📈 Analytics":
